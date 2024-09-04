@@ -1,7 +1,7 @@
 from mediapipe import Image, ImageFormat
 import cv2
 
-
+# Image Factory:> wrap the image convertion
 class MpImageFactory:
     @staticmethod
     def convert_from_cv_color_image(cv_image: cv2.Mat) -> Image:

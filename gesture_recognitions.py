@@ -7,13 +7,20 @@ from image_factory import MpImageFactory
 
 class GestureRecognition:
     def __init__(self):
+        self.recognizer = None
         self.__init_default_recognizer()
 
     """
         INIT the recognizer as default, usually use the default recognizers
     """
     def __init_default_recognizer(self):
+        # Defaultly, we use the default recognizer
         base_options = python.BaseOptions(model_asset_path='models/default/default_gesture_recognizer.task')
+        options = vision.GestureRecognizerOptions(base_options=base_options)
+        self.recognizer = vision.GestureRecognizer.create_from_options(options)
+
+    def switch_model(self, model_path: str):
+        base_options = python.BaseOptions(model_asset_path=model_path)
         options = vision.GestureRecognizerOptions(base_options=base_options)
         self.recognizer = vision.GestureRecognizer.create_from_options(options)
 

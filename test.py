@@ -18,7 +18,8 @@ while True:
     result = gesture_recognizer.get_from_cv_image(frame)
     # Check the availability of the result
     if GestureRecognizerResultAnalyzer.check_result_available(result):
-        # Get the type
+        # Get the type, Further Tasks are supposed to be at here :)
+        # And that is a waiting lists!
         gesture_type = GestureRecognizerResultAnalyzer.get_gesture_signals(result)
         print(gesture_type)
     # Display the frame
