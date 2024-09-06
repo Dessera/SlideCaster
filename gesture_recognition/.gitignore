@@ -164,3 +164,4 @@ cython_debug/
 result
 result-*
 .direnv
+.dream2nix

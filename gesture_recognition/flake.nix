@@ -47,6 +47,7 @@
           pkgs.ruff
           pkgs.black
         ];
+        LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.libGL}/lib:${pkgs.glib.out}/lib";
       };
     });
   };
