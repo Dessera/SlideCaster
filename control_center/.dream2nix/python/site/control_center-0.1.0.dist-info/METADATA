@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: control_center
+Version: 0.1.0
+Summary: Gesture recognition control center
+Author-email: Dessera <1533653159@qq.com>
+Description-Content-Type: text/markdown
+Requires-Dist: typer ==0.12.5
+
