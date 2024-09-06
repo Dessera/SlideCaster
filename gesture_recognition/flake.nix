@@ -24,16 +24,22 @@
       perSystem = { config, pkgs, ... }:
         {
           devShells.default = pkgs.mkShell {
-              venvDir = "venv";
-              packages = with pkgs; [
-                python310
-                poetry
-                black
-              ] ++ (with pkgs.python310Packages; [
-                pip
-                venvShellHook
-              ]);
-            };
+            venvDir = "venv";
+            packages = with pkgs; [
+              python312
+              poetry
+              black
+
+              nil
+              nixpkgs-fmt
+            ] ++ (with pkgs.python312Packages; [
+              pip
+              venvShellHook
+            ]);
+
+            # envs for mediapipe
+            LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.libGL}/lib:${pkgs.glib.out}/lib";
+          };
         };
     };
 }
