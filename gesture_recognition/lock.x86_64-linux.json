@@ -1,0 +1,266 @@
+{
+  "fetchPipMetadata": {
+    "sources": {
+      "absl-py": {
+        "is_direct": false,
+        "sha256": "526a04eadab8b4ee719ce68f204172ead1027549089702d99b9059f129ff1308",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/a2/ad/e0d3c824784ff121c03cc031f944bc7e139a8f1870ffd2845cc2dd76f6c4/absl_py-2.1.0-py3-none-any.whl",
+        "version": "2.1.0"
+      },
+      "attrs": {
+        "is_direct": false,
+        "sha256": "81921eb96de3191c8258c199618104dd27ac608d9366f5e35d011eae1867ede2",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/6a/21/5b6702a7f963e95456c0de2d495f67bf5fd62840ac655dc451586d23d39a/attrs-24.2.0-py3-none-any.whl",
+        "version": "24.2.0"
+      },
+      "cffi": {
+        "is_direct": false,
+        "sha256": "b62ce867176a75d03a665bad002af8e6d54644fad99a3c70905c543130e39d93",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/b2/d5/da47df7004cb17e4955df6a43d14b3b4ae77737dff8bf7f8f333196717bf/cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.17.1"
+      },
+      "contourpy": {
+        "is_direct": false,
+        "sha256": "3634b5385c6716c258d0419c46d05c8aa7dc8cb70326c9a4fb66b69ad2b52e09",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/6e/be/524e377567defac0e21a46e2a529652d165fed130a0d8a863219303cee18/contourpy-1.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.3.0"
+      },
+      "cycler": {
+        "is_direct": false,
+        "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl",
+        "version": "0.12.1"
+      },
+      "flatbuffers": {
+        "is_direct": false,
+        "sha256": "8dbdec58f935f3765e4f7f3cf635ac3a77f83568138d6a2311f524ec96364812",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/41/f0/7e988a019bc54b2dbd0ad4182ef2d53488bb02e58694cd79d61369e85900/flatbuffers-24.3.25-py2.py3-none-any.whl",
+        "version": "24.3.25"
+      },
+      "fonttools": {
+        "is_direct": false,
+        "sha256": "10f5e6c3510b79ea27bb1ebfcc67048cde9ec67afa87c7dd7efa5c700491ac7f",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/db/2b/5779cfd48625e013c2dfcf0c246474d5b1f5d061a5f1e476037bf9fff3a3/fonttools-4.53.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "4.53.1"
+      },
+      "jax": {
+        "is_direct": false,
+        "sha256": "5688703735133d0dc537e99a1d646198a49c9d472d4715fde4bd437c44151bd7",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/7e/cf/5f51b43bd692e90585c0ef6e8d1b0db5d254fe0224a6570daa59a1be014f/jax-0.4.31-py3-none-any.whl",
+        "version": "0.4.31"
+      },
+      "jaxlib": {
+        "is_direct": false,
+        "sha256": "1f1afa5fd58a60f67f0ca586e26714aece62eaa2c8334c24d0e8285afc4a7ccd",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/b1/09/58d35465d48c8bee1d9a4e7a3c5db2edaabfc7ac94f4576c9f8c51b83e70/jaxlib-0.4.31-cp312-cp312-manylinux2014_x86_64.whl",
+        "version": "0.4.31"
+      },
+      "kiwisolver": {
+        "is_direct": false,
+        "sha256": "693902d433cf585133699972b6d7c42a8b9f8f826ebcaf0132ff55200afc599e",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/21/e4/c0b6746fd2eb62fe702118b3ca0cb384ce95e1261cfada58ff693aeec08a/kiwisolver-1.4.7-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.4.7"
+      },
+      "matplotlib": {
+        "is_direct": false,
+        "sha256": "f6ee45bc4245533111ced13f1f2cace1e7f89d1c793390392a80c139d6cf0e6c",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/27/75/de5b9cd67648051cae40039da0c8cbc497a0d99acb1a1f3d087cd66d27b7/matplotlib-3.9.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.9.2"
+      },
+      "mediapipe": {
+        "is_direct": false,
+        "sha256": "c7fee5088df68f2f3ab44f688e059ef85859669f8307207cbe19337a7c35b8b9",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/5e/c1/20447696a967b07f5bf9c77cf037b5d06d26e596daf416170e6cfca79613/mediapipe-0.10.15-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "0.10.15"
+      },
+      "ml-dtypes": {
+        "is_direct": false,
+        "sha256": "eaa32979ebfde3a0d7c947cafbf79edc1ec77ac05ad0780ee86c1d8df70f2259",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/8c/ef/5635b60d444db9c949b32d4e1a0a30b3ac237afbd71cce8bd1ccfb145723/ml_dtypes-0.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "0.4.0"
+      },
+      "numpy": {
+        "is_direct": false,
+        "sha256": "675d61ffbfa78604709862923189bad94014bef562cc35cf61d3a07bba02a7ed",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/0f/50/de23fde84e45f5c4fda2488c759b69990fd4512387a8632860f3ac9cd225/numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.26.4"
+      },
+      "opencv-contrib-python": {
+        "is_direct": false,
+        "sha256": "a261223db41f6e512d76deaf21c8fcfb4fbbcbc2de62ca7f74a05f2c9ee489ef",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/b0/e0/8f5d065ebb2e5941d289c5f653f944318f9e418bc5167bc6a346ab5e0f6a/opencv_contrib_python-4.10.0.84-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "4.10.0.84"
+      },
+      "opt-einsum": {
+        "is_direct": false,
+        "sha256": "2455e59e3947d3c275477df7f5205b30635e266fe6dc300e3d9f9646bfcea147",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl",
+        "version": "3.3.0"
+      },
+      "packaging": {
+        "is_direct": false,
+        "sha256": "5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/08/aa/cc0199a5f0ad350994d660967a8efb233fe0416e4639146c089643407ce6/packaging-24.1-py3-none-any.whl",
+        "version": "24.1"
+      },
+      "pillow": {
+        "is_direct": false,
+        "sha256": "86dcb5a1eb778d8b25659d5e4341269e8590ad6b4e8b44d9f4b07f8d136c414a",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/55/77/40daddf677897a923d5d33329acd52a2144d54a9644f2a5422c028c6bf2d/pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl",
+        "version": "10.4.0"
+      },
+      "protobuf": {
+        "is_direct": false,
+        "sha256": "3319e073562e2515c6ddc643eb92ce20809f5d8f10fead3332f71c63be6a7040",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ca/6c/cc7ab2fb3a4a7f07f211d8a7bbb76bba633eb09b148296dbd4281e217f95/protobuf-4.25.4-cp37-abi3-manylinux2014_x86_64.whl",
+        "version": "4.25.4"
+      },
+      "pycparser": {
+        "is_direct": false,
+        "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
+        "version": "2.22"
+      },
+      "pyparsing": {
+        "is_direct": false,
+        "sha256": "a6a7ee4235a3f944aa1fa2249307708f893fe5717dc603503c6c7969c070fb7c",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/e5/0c/0e3c05b1c87bb6a1c76d281b0f35e78d2d80ac91b5f8f524cebf77f51049/pyparsing-3.1.4-py3-none-any.whl",
+        "version": "3.1.4"
+      },
+      "python-dateutil": {
+        "is_direct": false,
+        "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+        "version": "2.9.0.post0"
+      },
+      "scipy": {
+        "is_direct": false,
+        "sha256": "8f9ea80f2e65bdaa0b7627fb00cbeb2daf163caa015e59b7516395fe3bd1e066",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/8e/ee/8a26858ca517e9c64f84b4c7734b89bda8e63bec85c3d2f432d225bb1886/scipy-1.14.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.14.1"
+      },
+      "setuptools": {
+        "is_direct": false,
+        "sha256": "5f4c08aa4d3ebcb57a50c33b1b07e94315d7fc7230f7115e47fc99776c8ce308",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/cb/9c/9ad11ac06b97e55ada655f8a6bea9d1d3f06e120b178cd578d80e558191d/setuptools-74.1.2-py3-none-any.whl",
+        "version": "74.1.2"
+      },
+      "six": {
+        "is_direct": false,
+        "sha256": "8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl",
+        "version": "1.16.0"
+      },
+      "sounddevice": {
+        "is_direct": false,
+        "sha256": "8a734043ab1f751cb20f6f25d8f07408a1aadf2eeca923061849d38bb59f9e3d",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/e6/3c/241480772b55a39d4c07f2d88cf43e0a2955cc662f369c33dfb4fb79e9fa/sounddevice-0.5.0-py3-none-any.whl",
+        "version": "0.5.0"
+      }
+    },
+    "targets": {
+      "default": {
+        "absl-py": [],
+        "attrs": [],
+        "cffi": [
+          "pycparser"
+        ],
+        "contourpy": [
+          "numpy"
+        ],
+        "cycler": [],
+        "flatbuffers": [],
+        "fonttools": [],
+        "jax": [
+          "jaxlib",
+          "ml-dtypes",
+          "numpy",
+          "opt-einsum",
+          "scipy"
+        ],
+        "jaxlib": [
+          "ml-dtypes",
+          "numpy",
+          "scipy"
+        ],
+        "kiwisolver": [],
+        "matplotlib": [
+          "contourpy",
+          "cycler",
+          "fonttools",
+          "kiwisolver",
+          "numpy",
+          "packaging",
+          "pillow",
+          "pyparsing",
+          "python-dateutil"
+        ],
+        "mediapipe": [
+          "absl-py",
+          "attrs",
+          "flatbuffers",
+          "jax",
+          "jaxlib",
+          "matplotlib",
+          "numpy",
+          "opencv-contrib-python",
+          "protobuf",
+          "sounddevice"
+        ],
+        "ml-dtypes": [
+          "numpy"
+        ],
+        "numpy": [],
+        "opencv-contrib-python": [
+          "numpy"
+        ],
+        "opt-einsum": [
+          "numpy"
+        ],
+        "packaging": [],
+        "pillow": [],
+        "protobuf": [],
+        "pycparser": [],
+        "pyparsing": [],
+        "python-dateutil": [
+          "six"
+        ],
+        "scipy": [
+          "numpy"
+        ],
+        "setuptools": [],
+        "six": [],
+        "sounddevice": [
+          "cffi"
+        ]
+      }
+    }
+  },
+  "invalidationHash": "8f91ece662607de77db0f00507ca3a2d61423fb9a4f0cba6d2a15a35add9e71e"
+}
