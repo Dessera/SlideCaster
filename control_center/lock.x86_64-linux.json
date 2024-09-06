@@ -1,12 +1,40 @@
 {
   "fetchPipMetadata": {
     "sources": {
+      "annotated-types": {
+        "is_direct": false,
+        "sha256": "1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl",
+        "version": "0.7.0"
+      },
+      "anyio": {
+        "is_direct": false,
+        "sha256": "c1b2d8f46a8a812513012e1107cb0e68c17159a7a594208005a57dc776e1bdc7",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/7b/a2/10639a79341f6c019dedc95bd48a4928eed9f1d1197f4c04f546fc7ae0ff/anyio-4.4.0-py3-none-any.whl",
+        "version": "4.4.0"
+      },
       "click": {
         "is_direct": false,
         "sha256": "ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28",
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/00/2e/d53fa4befbf2cfa713304affc7ca780ce4fc1fd8710527771b58311a3229/click-8.1.7-py3-none-any.whl",
         "version": "8.1.7"
+      },
+      "fastapi": {
+        "is_direct": false,
+        "sha256": "c8d364485b6361fb643d53920a18d58a696e189abcb901ec03b487e35774c476",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/a2/a3/bb626a4cd00320bcdf8680fc62a544334348d1cc479e111e0da9e87048a0/fastapi-0.113.0-py3-none-any.whl",
+        "version": "0.113.0"
+      },
+      "idna": {
+        "is_direct": false,
+        "sha256": "050b4e5baadcd44d760cedbd2b8e639f2ff89bbc7a5730fcc662954303377aac",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/22/7e/d71db821f177828df9dea8c42ac46473366f191be53080e552e628aad991/idna-3.8-py3-none-any.whl",
+        "version": "3.8"
       },
       "markdown-it-py": {
         "is_direct": false,
@@ -21,6 +49,20 @@
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl",
         "version": "0.1.2"
+      },
+      "pydantic": {
+        "is_direct": false,
+        "sha256": "f66a7073abd93214a20c5f7b32d56843137a7a2e70d02111f3be287035c45370",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/54/38/95bdb5dfcebad2c11c88f7aa2d635fe53a0b7405ef39a6850c8bced455d4/pydantic-2.9.0-py3-none-any.whl",
+        "version": "2.9.0"
+      },
+      "pydantic-core": {
+        "is_direct": false,
+        "sha256": "2b1a195efd347ede8bcf723e932300292eb13a9d2a3c1f84eb8f37cbbc905b7f",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ad/fc/6b4f95c64bbeadaa6f84cffb51f469f6fdd61215d97b4ec8d89d027e574b/pydantic_core-2.23.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.23.2"
       },
       "pygments": {
         "is_direct": false,
@@ -50,6 +92,20 @@
         "url": "https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl",
         "version": "1.5.4"
       },
+      "sniffio": {
+        "is_direct": false,
+        "sha256": "2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl",
+        "version": "1.3.1"
+      },
+      "starlette": {
+        "is_direct": false,
+        "sha256": "526f53a77f0e43b85f583438aee1a940fd84f8fd610353e8b0c1a77ad8a87e76",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/69/13/fa916b69d7c21f80a9c5bde0445cbbbdb9542a9d8df73ea3d588aae55c26/starlette-0.38.4-py3-none-any.whl",
+        "version": "0.38.4"
+      },
       "typer": {
         "is_direct": false,
         "sha256": "62fe4e471711b147e3365034133904df3e235698399bc4de2b36c8579298d52b",
@@ -63,15 +119,49 @@
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl",
         "version": "4.12.2"
+      },
+      "tzdata": {
+        "is_direct": false,
+        "sha256": "9068bc196136463f5245e51efda838afa15aaeca9903f49050dfa2679db4d252",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/65/58/f9c9e6be752e9fcb8b6a0ee9fb87e6e7a1f6bcab2cdc73f02bb7ba91ada0/tzdata-2024.1-py2.py3-none-any.whl",
+        "version": "2024.1"
+      },
+      "websockets": {
+        "is_direct": false,
+        "sha256": "139add0f98206cb74109faf3611b7783ceafc928529c62b389917a037d4cfdf4",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/94/6e/eaf95894042ba8a05a125fe8bcf9ee3572fef6edbcbf49478f4991c027cc/websockets-13.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "13.0.1"
       }
     },
     "targets": {
       "default": {
+        "annotated-types": [],
+        "anyio": [
+          "idna",
+          "sniffio"
+        ],
         "click": [],
+        "fastapi": [
+          "pydantic",
+          "starlette",
+          "typing-extensions"
+        ],
+        "idna": [],
         "markdown-it-py": [
           "mdurl"
         ],
         "mdurl": [],
+        "pydantic": [
+          "annotated-types",
+          "pydantic-core",
+          "typing-extensions",
+          "tzdata"
+        ],
+        "pydantic-core": [
+          "typing-extensions"
+        ],
         "pygments": [],
         "rich": [
           "markdown-it-py",
@@ -79,15 +169,21 @@
         ],
         "setuptools": [],
         "shellingham": [],
+        "sniffio": [],
+        "starlette": [
+          "anyio"
+        ],
         "typer": [
           "click",
           "rich",
           "shellingham",
           "typing-extensions"
         ],
-        "typing-extensions": []
+        "typing-extensions": [],
+        "tzdata": [],
+        "websockets": []
       }
     }
   },
-  "invalidationHash": "6b4c956020d07a402ee882f482a943c4e582cc3ce0b1c2ab18e9e3bae85adc1e"
+  "invalidationHash": "60b1569b2fcdbbc93b5581010c531c288a1edf27b6005b50686064cfdde062f2"
 }

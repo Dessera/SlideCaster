@@ -6,7 +6,11 @@ authors = [{ name = "Dessera", email = "1533653159@qq.com" }]
 # license = "MIT"
 readme = "README.md"
 
-dependencies = ["typer==0.12.5"]
+dependencies = [
+  "typer==0.12.5",
+  "fastapi==0.113.0",
+  "websockets==13.0.1"
+]
 
 
 [build-system]

@@ -13,6 +13,6 @@ site.addsitedir("/data/projects/SlideCaster/control_center/.dream2nix/python/sit
 # in our pyEnv, those would shadow the editables. So we move
 # the editables to the front of sys.path.
 for index, path in enumerate(sys.path):
-  if path in ['/data/projects/SlideCaster/control_center']:
+  if path in ['/data/projects/SlideCaster/control_center/src']:
     sys.path.insert(0, sys.path.pop(index))
         

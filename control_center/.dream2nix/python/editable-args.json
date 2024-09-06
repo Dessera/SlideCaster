@@ -3,7 +3,7 @@
     "control_center": "."
   },
   "findRoot": "/nix/store/szajfysbbjh2ccwkdx6svydh54vs24jg-find-root.py",
-  "pyEnv": "/nix/store/7xa7ph7l3nsny4g4lfycif87szjj2708-python3-3.12.3-env",
+  "pyEnv": "/nix/store/9wfqd5n4cilwfajxy0f5a1qziqy0qlvc-python3-3.12.3-env",
   "rootName": "control_center",
   "sitePackages": "lib/python3.12/site-packages",
   "storeDir": "/nix/store",
