@@ -1,0 +1,17 @@
+[project]
+name = "control_center"
+version = "0.1.0"
+description = "Gesture recognition control center"
+authors = [{ name = "Dessera", email = "1533653159@qq.com" }]
+# license = "MIT"
+readme = "README.md"
+
+dependencies = ["typer==0.12.5"]
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+# [project.scripts]
+# jlud = "jlud:main"
