@@ -1,17 +1,14 @@
-[tool.poetry]
-name = "gesture-recognition"
+[project]
+name = "jlud"
 version = "0.1.0"
-description = "SlideCaster controller driven by gesture recognition"
-authors = ["Dessera <1533653159@qq.com>"]
+description = "JLU Drcom client implemented by python"
+authors = [{ name = "Dessera", email = "1533653159@qq.com" }]
+# license = "MIT"
 readme = "README.md"
-packages = [{ include = "app" }]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-requests = "^2.32.3"
-mediapipe = "^0.10.15"
+dependencies = ["mediapipe"]
 
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
