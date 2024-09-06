@@ -164,6 +164,3 @@ cython_debug/
 result
 result-*
 .direnv
-
-# data dir
-data/*
