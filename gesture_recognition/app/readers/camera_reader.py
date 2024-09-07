@@ -8,6 +8,11 @@ from ..utils.fps_controller import fps_controller
 
 
 class MultiProcessCameraReader(ImageReader):
+    """利用多进程的摄像头读取器
+
+    多进程用于对帧率进行转换，解决了 VideoCapture 类中内置的缓存机制导致的画面滞后问题。
+    """
+
     __camera_id: int
     __fps: float
     __manager: Manager  # type: ignore
@@ -54,6 +59,11 @@ class MultiProcessCameraReader(ImageReader):
 
 
 class CameraReader(ImageReader):
+    """基础的摄像头读取器
+
+    在测试时功能良好，但无法自定义帧率，VideoCapture 类中内置的缓存机制会导致捕获的画面在低帧率时严重滞后。
+    """
+
     __camera: VideoCapture
 
     def __init__(self, camera_id: int = 0):

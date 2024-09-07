@@ -155,6 +155,13 @@
         "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
         "version": "2.9.0.post0"
       },
+      "python-statemachine": {
+        "is_direct": false,
+        "sha256": "c892b66f1248af80854ec3ff4186399625693a79e205e3ca33dffee0c058c963",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/75/e0/2f021c830d0cb3f78e9d372f7ecceebde48f9d1b11ef68c87149e931fd77/python_statemachine-2.3.4-py3-none-any.whl",
+        "version": "2.3.4"
+      },
       "scipy": {
         "is_direct": false,
         "sha256": "8f9ea80f2e65bdaa0b7627fb00cbeb2daf163caa015e59b7516395fe3bd1e066",
@@ -251,6 +258,7 @@
         "python-dateutil": [
           "six"
         ],
+        "python-statemachine": [],
         "scipy": [
           "numpy"
         ],
@@ -262,5 +270,5 @@
       }
     }
   },
-  "invalidationHash": "8f91ece662607de77db0f00507ca3a2d61423fb9a4f0cba6d2a15a35add9e71e"
+  "invalidationHash": "ea359bccd133af16a40a92c5ce89d286d4c200d24dd67a38db1bb31284708034"
 }

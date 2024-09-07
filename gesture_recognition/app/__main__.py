@@ -15,7 +15,7 @@ async def main():
 
     while True:
         # take down the start time
-        async with async_fps_controller(1):
+        async with async_fps_controller(2):
             recognized_gesture = recognizer.recognize(reader)
             if recognized_gesture is not None:
                 print("Recognized gesture:", recognized_gesture)

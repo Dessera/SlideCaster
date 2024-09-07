@@ -6,7 +6,7 @@ authors = [{ name = "Dessera", email = "1533653159@qq.com" }]
 # license = "MIT"
 readme = "README.md"
 
-dependencies = ["mediapipe"]
+dependencies = ["mediapipe==0.10.15", "python-statemachine==2.3.4"]
 
 
 [build-system]
