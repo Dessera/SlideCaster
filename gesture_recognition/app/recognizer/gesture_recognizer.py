@@ -16,8 +16,8 @@ class GestureRecognizer(ImageRecognizer):
 
     recognizer: GestureRecognizerImpl
 
-    def __init__(self):
-        self.switch_model("models/default/default_gesture_recognizer.task")
+    def __init__(self, model_path: str):
+        self.switch_model(model_path)
 
     @staticmethod
     def __from_cv_color_image(cv_image: MatLike) -> Image:  # type: ignore
