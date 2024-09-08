@@ -15,12 +15,26 @@
         "url": "https://files.pythonhosted.org/packages/6a/21/5b6702a7f963e95456c0de2d495f67bf5fd62840ac655dc451586d23d39a/attrs-24.2.0-py3-none-any.whl",
         "version": "24.2.0"
       },
+      "certifi": {
+        "is_direct": false,
+        "sha256": "922820b53db7a7257ffbda3f597266d435245903d80737e34f8a45ff3e3230d8",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/12/90/3c9ff0512038035f59d279fddeb79f5f1eccd8859f06d6163c58798b9487/certifi-2024.8.30-py3-none-any.whl",
+        "version": "2024.8.30"
+      },
       "cffi": {
         "is_direct": false,
         "sha256": "b62ce867176a75d03a665bad002af8e6d54644fad99a3c70905c543130e39d93",
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/b2/d5/da47df7004cb17e4955df6a43d14b3b4ae77737dff8bf7f8f333196717bf/cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "1.17.1"
+      },
+      "charset-normalizer": {
+        "is_direct": false,
+        "sha256": "90d558489962fd4918143277a773316e56c72da56ec7aa3dc3dbbe20fdfed15b",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ee/fb/14d30eb4956408ee3ae09ad34299131fb383c47df355ddb428a7331cfa1e/charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.3.2"
       },
       "contourpy": {
         "is_direct": false,
@@ -49,6 +63,13 @@
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/db/2b/5779cfd48625e013c2dfcf0c246474d5b1f5d061a5f1e476037bf9fff3a3/fonttools-4.53.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
         "version": "4.53.1"
+      },
+      "idna": {
+        "is_direct": false,
+        "sha256": "050b4e5baadcd44d760cedbd2b8e639f2ff89bbc7a5730fcc662954303377aac",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/22/7e/d71db821f177828df9dea8c42ac46473366f191be53080e552e628aad991/idna-3.8-py3-none-any.whl",
+        "version": "3.8"
       },
       "jax": {
         "is_direct": false,
@@ -155,12 +176,19 @@
         "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
         "version": "2.9.0.post0"
       },
-      "python-statemachine": {
+      "python-dotenv": {
         "is_direct": false,
-        "sha256": "c892b66f1248af80854ec3ff4186399625693a79e205e3ca33dffee0c058c963",
+        "sha256": "f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a",
         "type": "url",
-        "url": "https://files.pythonhosted.org/packages/75/e0/2f021c830d0cb3f78e9d372f7ecceebde48f9d1b11ef68c87149e931fd77/python_statemachine-2.3.4-py3-none-any.whl",
-        "version": "2.3.4"
+        "url": "https://files.pythonhosted.org/packages/6a/3e/b68c118422ec867fa7ab88444e1274aa40681c606d59ac27de5a5588f082/python_dotenv-1.0.1-py3-none-any.whl",
+        "version": "1.0.1"
+      },
+      "requests": {
+        "is_direct": false,
+        "sha256": "70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl",
+        "version": "2.32.3"
       },
       "scipy": {
         "is_direct": false,
@@ -189,21 +217,31 @@
         "type": "url",
         "url": "https://files.pythonhosted.org/packages/e6/3c/241480772b55a39d4c07f2d88cf43e0a2955cc662f369c33dfb4fb79e9fa/sounddevice-0.5.0-py3-none-any.whl",
         "version": "0.5.0"
+      },
+      "urllib3": {
+        "is_direct": false,
+        "sha256": "a448b2f64d686155468037e1ace9f2d2199776e17f0a46610480d311f73e3472",
+        "type": "url",
+        "url": "https://files.pythonhosted.org/packages/ca/1c/89ffc63a9605b583d5df2be791a27bc1a42b7c32bab68d3c8f2f73a98cd4/urllib3-2.2.2-py3-none-any.whl",
+        "version": "2.2.2"
       }
     },
     "targets": {
       "default": {
         "absl-py": [],
         "attrs": [],
+        "certifi": [],
         "cffi": [
           "pycparser"
         ],
+        "charset-normalizer": [],
         "contourpy": [
           "numpy"
         ],
         "cycler": [],
         "flatbuffers": [],
         "fonttools": [],
+        "idna": [],
         "jax": [
           "jaxlib",
           "ml-dtypes",
@@ -258,7 +296,13 @@
         "python-dateutil": [
           "six"
         ],
-        "python-statemachine": [],
+        "python-dotenv": [],
+        "requests": [
+          "certifi",
+          "charset-normalizer",
+          "idna",
+          "urllib3"
+        ],
         "scipy": [
           "numpy"
         ],
@@ -266,9 +310,10 @@
         "six": [],
         "sounddevice": [
           "cffi"
-        ]
+        ],
+        "urllib3": []
       }
     }
   },
-  "invalidationHash": "ea359bccd133af16a40a92c5ce89d286d4c200d24dd67a38db1bb31284708034"
+  "invalidationHash": "43d3801dbabe456c96b89ffe78e2ec61d5c81e152dd291f260954bccc4d8ea21"
 }

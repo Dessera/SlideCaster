@@ -45,12 +45,12 @@ class GestureRecognizer(ImageRecognizer):
         options = GestureRecognizerOptions(base_options=base_options)
         self.recognizer = GestureRecognizerImpl.create_from_options(options)
 
-    def recognize(self, reader: ImageReader) -> str | None:
+    def recognize(self, reader: ImageReader) -> str:
         cv_image = reader.read()
         if cv_image is None:
-            return None
+            return "None"
         image = self.__from_cv_color_image(cv_image)  # type: ignore
         result = self.__recognize_impl(image)  # type: ignore
         if len(result.gestures) == 0:  # type: ignore
-            return None
+            return "None"
         return result.gestures[0][0].category_name  # type: ignore
