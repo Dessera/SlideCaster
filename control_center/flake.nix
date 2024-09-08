@@ -50,8 +50,6 @@
 
           pkgs.ruff
           pkgs.black
-
-          neovim'
         ];
       };
     });

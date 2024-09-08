@@ -1,5 +1,6 @@
 import asyncio
 import requests
+from dataclasses import dataclass
 
 from .preprocessor.gesture_filter import GestureFilter
 from .utils.fps_controller import async_fps_controller
@@ -9,18 +10,25 @@ from .config import Config
 
 # TODO: 待封装
 
-queue: asyncio.Queue[str] = asyncio.Queue()
+
+@dataclass
+class GestureOperation:
+    gesture: str
+    state: str
+
+
+queue: asyncio.Queue[GestureOperation] = asyncio.Queue()
 config = Config()
 
 
 async def gesture_sender():
     while True:
         try:
-            gesture = await queue.get()
+            g_operation = await queue.get()
             r = requests.post(  # type: ignore
-                url=f"{config.controller_center_url}/{gesture}",
+                url=f"{config.controller_center_url}/{g_operation.gesture}/{g_operation.state}",
             )
-            print(f"Sent gesture: {gesture}, status code: {r.status_code}")  # type: ignore
+            print(f"Sent gesture: {g_operation}, status code: {r.status_code}")  # type: ignore
             queue.task_done()
         except Exception as e:
             print(f"Error: {e}")
@@ -50,7 +58,7 @@ async def main():
             state, gesture = filter.filter(recognized_gesture)
 
             if gesture != "None" and state != "idle":
-                await queue.put(gesture)
+                await queue.put(GestureOperation(gesture, state))
 
     reader.stop()
 

@@ -14,16 +14,24 @@ async def websocket_endpoint(websocket: WebSocket):
             value = await buffer.get()
             await websocket.send_text(value)
         except WebSocketDisconnect:
-            print("Websocket disconnected, wait for next connection")
+            break
         except Exception as e:
             print(f"Websocket error: {e}")
+            break
 
 
-@router.post("/on/{event_name}")
-async def on_gesture_event(event_name: str):
-    gesture_map = {"Thumb_Up": "page_up"}
-    mapped_event: str | None = gesture_map.get(event_name)
-    if not mapped_event:
-        print(f"Event {event_name} was ignored")
-    else:
-        await buffer.put(mapped_event)
+@router.post("/on/{event_name}/{event_type}")
+async def on_gesture_event(event_name: str, event_type: str):
+    gesture_to_operation = {
+        "Thumb_Up": {
+            "short": "page_up",
+            "long": "page_up",
+        }
+    }
+    mapped_gesture = gesture_to_operation.get(event_name)
+    if not mapped_gesture:
+        return
+    operation = mapped_gesture.get(event_type)
+    if not operation:
+        return
+    await buffer.put(operation)
