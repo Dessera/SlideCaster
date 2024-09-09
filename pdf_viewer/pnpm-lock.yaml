@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@tato30/vue-pdf':
-        specifier: ^1.11.0
-        version: 1.11.0(vue@3.5.3)
+        specifier: ^1.11.1
+        version: 1.11.1(vue@3.5.3)
       '@vueuse/core':
         specifier: ^11.0.3
         version: 11.0.3(vue@3.5.3)
@@ -962,8 +962,8 @@ packages:
     resolution: {integrity: sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==}
     engines: {node: '>=18'}
 
-  '@tato30/vue-pdf@1.11.0':
-    resolution: {integrity: sha512-GQNfVqq8if6/tezgcW1E0iU7kO5VfzMihdU6sfRnw0ewDYcP43JFt3r2fmDggyAY5lu7ArEwCFvlWi7WbvleCw==}
+  '@tato30/vue-pdf@1.11.1':
+    resolution: {integrity: sha512-r32h9kLIZsuQGPibpM6jmZK6UisJ1J20BqW1RKtptuiMnukArsINU6Hheo7IWDAljkFk8faLfx2vz+LYhwZV6w==}
     peerDependencies:
       vue: ^3.2.33
 
@@ -3055,8 +3055,8 @@ packages:
   pdfjs-dist@2.6.347:
     resolution: {integrity: sha512-QC+h7hG2su9v/nU1wEI3SnpPIrqJODL7GTDFvR74ANKGq1AFJW16PH8VWnhpiTi9YcLSFV9xLeWSgq+ckHLdVQ==}
 
-  pdfjs-dist@4.6.82:
-    resolution: {integrity: sha512-BUOryeRFwvbLe0lOU6NhkJNuVQUp06WxlJVVCsxdmJ4y5cU3O3s3/0DunVdK1PMm7v2MUw52qKYaidhDH1Z9+w==}
+  pdfjs-dist@4.5.136:
+    resolution: {integrity: sha512-V1BALcAN/FmxBEShLxoP73PlQZAZtzlaNfRbRhJrKvXzjLC5VaIlBAQUJuWP8iaYUmIdmdLHmt3E2TBglxOm3w==}
     engines: {node: '>=18'}
 
   perfect-debounce@1.0.0:
@@ -5157,9 +5157,9 @@ snapshots:
 
   '@sindresorhus/merge-streams@2.3.0': {}
 
-  '@tato30/vue-pdf@1.11.0(vue@3.5.3)':
+  '@tato30/vue-pdf@1.11.1(vue@3.5.3)':
     dependencies:
-      pdfjs-dist: 4.6.82
+      pdfjs-dist: 4.5.136
       vue: 3.5.3
     transitivePeerDependencies:
       - encoding
@@ -7782,7 +7782,7 @@ snapshots:
 
   pdfjs-dist@2.6.347: {}
 
-  pdfjs-dist@4.6.82:
+  pdfjs-dist@4.5.136:
     optionalDependencies:
       canvas: 2.11.2
       path2d: 0.2.1

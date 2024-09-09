@@ -12,12 +12,12 @@ from .config import Config
 
 
 @dataclass
-class GestureOperation:
-    gesture: str
-    state: str
+class Gesture:
+    label: str
+    operation: str
 
 
-queue: asyncio.Queue[GestureOperation] = asyncio.Queue()
+queue: asyncio.Queue[Gesture] = asyncio.Queue()
 config = Config()
 
 
@@ -26,7 +26,8 @@ async def gesture_sender():
         try:
             g_operation = await queue.get()
             r = requests.post(  # type: ignore
-                url=f"{config.controller_center_url}/{g_operation.gesture}/{g_operation.state}",
+                url=f"{config.controller_center_url}",
+                json={"label": g_operation.label, "operation": g_operation.operation},
             )
             print(f"Sent gesture: {g_operation}, status code: {r.status_code}")  # type: ignore
             queue.task_done()
@@ -58,7 +59,7 @@ async def main():
             state, gesture = filter.filter(recognized_gesture)
 
             if gesture != "None" and state != "idle":
-                await queue.put(GestureOperation(gesture, state))
+                await queue.put(Gesture(gesture, state))
 
     reader.stop()
 
