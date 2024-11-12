@@ -37,9 +37,7 @@ const { status, data, send, open, close } = useWebSocket(
     },
   }
 );
-const { pdf, pages } = usePDF(
-  "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf"
-);
+const { pdf, pages } = usePDF("/test.pdf");
 
 const page = ref(1);
 const scale = ref(1);
