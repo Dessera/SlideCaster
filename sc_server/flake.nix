@@ -55,7 +55,7 @@
         packages.default = pkgs.sc_server;
         devShells = {
           default = pkgs.mkShell {
-            # inputsFrom = [ pkgs.sc_server ];
+            inputsFrom = [ pkgs.sc_server ];
             packages = with pkgs; [
               poetry
               ruff
