@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from .routers import include_app_routers
+from .error import include_app_error_handlers
 
 
 def create_app() -> FastAPI:
@@ -7,18 +9,10 @@ def create_app() -> FastAPI:
     Returns:
         FastAPI: FastAPI实例
     """
-    app = FastAPI(title="EJob-DB", lifespan=lifespan)
+    app = FastAPI(title="SC Server")
 
-    # app.add_middleware(
-    #     CORSMiddleware,
-    #     allow_origins=[CONFIG.app_base_url],
-    #     allow_credentials=True,
-    #     allow_methods=["*"],
-    #     allow_headers=["*"],
-    # )
-
-    # include_app_routers(app)
-    # include_app_error_handlers(app)
+    include_app_routers(app)
+    include_app_error_handlers(app)
 
     return app
 

@@ -59,7 +59,7 @@
             packages = with pkgs; [
               poetry
               ruff
-              nil
+              nixd
               nixfmt-rfc-style
             ];
           };
