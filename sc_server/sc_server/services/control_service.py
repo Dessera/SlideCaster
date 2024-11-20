@@ -1,4 +1,5 @@
 import asyncio
+
 from asyncio import Queue
 
 from ..config import CONFIG
@@ -12,3 +13,15 @@ async def get_command() -> str:
 
 async def put_command(command: str):
     await asyncio.wait_for(__queue.put(command), timeout=CONFIG.command_queue_timeout)
+
+
+def start_client():
+    pass
+
+
+def client_status():
+    pass
+
+
+def stop_client():
+    pass

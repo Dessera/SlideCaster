@@ -26,6 +26,7 @@
           { poetry2nix, lib }:
           poetry2nix.mkPoetryApplication {
             projectDir = self;
+            preferWheels = true;
             overrides = poetry2nix.overrides.withDefaults (
               final: super:
               lib.mapAttrs
@@ -62,6 +63,8 @@
               nixd
               nixfmt-rfc-style
             ];
+
+            LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.libGL}/lib:${pkgs.glib.out}/lib";
           };
 
           poetry = pkgs.mkShell {
