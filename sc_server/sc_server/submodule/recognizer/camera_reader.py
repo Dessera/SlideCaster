@@ -1,9 +1,37 @@
-from typing import Any
+import multiprocessing as mp
+import signal
+import sys
+
 from cv2 import VideoCapture
 from cv2.typing import MatLike
-from multiprocessing import Manager, Process
 
-from .utils.fps_controller import fps_controller
+
+from ...utils.fps_controller import fps_controller
+
+
+def __read_process_handler(camera_id: int, fps: float, queue: mp.Queue):
+    camera = VideoCapture(camera_id)
+
+    # handle sigterm
+    def exit_handler(signum, frame):
+        camera.release()
+        sys.exit(0)
+
+    signal.signal(signal.SIGTERM, exit_handler)
+    signal.signal(signal.SIGINT, exit_handler)
+
+    # Ensure no exception is raised when camera is not opened
+    # just for robustness :)
+    # TODO: add logging
+    while True:
+        with fps_controller(fps):
+            ret, frame = camera.read()
+            if not ret:
+                continue
+            # Queue is full, drop the oldest frame
+            if queue.full():
+                queue.get()
+            queue.put(frame)
 
 
 class MultiProcessCameraReader:
@@ -12,46 +40,30 @@ class MultiProcessCameraReader:
     多进程用于对帧率进行转换，解决了 VideoCapture 类中内置的缓存机制导致的画面滞后问题。
     """
 
-    __camera_id: int
-    __fps: float
-    __manager: Manager  # type: ignore
-    __queue: Any
-    __process: Process | None
+    m_camera_id: int
+    m_fps: float
+    m_queue = mp.Queue(maxsize=5)
+    m_process: mp.Process | None
 
     def __init__(self, camera_id: int = 0, fps: float = 30):
-        self.__camera_id = camera_id
-        self.__fps = fps
-        self.__manager = Manager()
-        self.__queue = self.__manager.Queue(maxsize=5)  # type: ignore
-
-    @staticmethod
-    def __read_process(camera_id: int, fps: float, queue: Any):
-        camera = VideoCapture(camera_id)
-        while camera.isOpened():
-            with fps_controller(fps):
-                ret, frame = camera.read()
-                if not ret:
-                    continue
-                if queue.full():
-                    queue.get()
-                queue.put(frame)
-        camera.release()
+        self.m_camera_id = camera_id
+        self.m_fps = fps
 
     def read(self) -> MatLike | None:
-        if self.__queue.empty():
+        if self.m_queue.empty():
             return None
-        frame = self.__queue.get()
+        frame = self.m_queue.get()
         return frame
 
     def start(self):
-        self.__process = Process(
-            target=self.__read_process,
-            args=(self.__camera_id, self.__fps, self.__queue),
+        self.m_process = mp.Process(
+            target=__read_process_handler,
+            args=(self.m_camera_id, self.m_fps, self.m_queue),
         )
-        self.__process.start()
+        self.m_process.start()
 
     def stop(self):
-        if self.__process is not None:
-            self.__process.terminate()
-            self.__process.join()
-            self.__process = None
+        if self.m_process is not None:
+            self.m_process.terminate()
+            self.m_process.join()
+            self.m_process = None

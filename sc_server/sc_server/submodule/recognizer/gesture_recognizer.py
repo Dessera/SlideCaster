@@ -11,7 +11,7 @@ from mediapipe import Image, ImageFormat  # type: ignore
 
 
 class GestureRecognizer:
-    recognizer: GestureRecognizerImpl
+    m_recognizer: GestureRecognizerImpl
 
     def __init__(self, model_path: str):
         self.switch_model(model_path)
@@ -30,7 +30,7 @@ class GestureRecognizer:
         Returns:
             GestureRecognizerResult: 识别结果
         """
-        return self.recognizer.recognize(image)  # type: ignore
+        return self.m_recognizer.recognize(image)  # type: ignore
 
     def switch_model(self, model_path: str):
         """切换模型（加载新的模型）
@@ -40,7 +40,7 @@ class GestureRecognizer:
         """
         base_options = ModelBaseOptions(model_asset_path=model_path)
         options = GestureRecognizerOptions(base_options=base_options)
-        self.recognizer = GestureRecognizerImpl.create_from_options(options)
+        self.m_recognizer = GestureRecognizerImpl.create_from_options(options)
 
     def recognize(self, cv_image: Any) -> str:
         if cv_image is None:

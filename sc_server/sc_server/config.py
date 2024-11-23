@@ -5,7 +5,6 @@ from dotenv import dotenv_values
 
 class __Config:
     file_base: str = "/tmp/.sc_cache"
-
     model_path: str = "/tmp/.sc_cache/model.task"
     map_path: str = "/tmp/.sc_cache/map.json"
 
@@ -22,6 +21,8 @@ class __Config:
     filter_long_threshold: int = 8
     filter_long_interval: int = 10
 
+    log_level: str = "INFO"
+
     def __init__(self):
         _cfg: dict[str, str | None] = {**dotenv_values(".env"), **os.environ}
         self.__check_file(_cfg)
@@ -29,6 +30,7 @@ class __Config:
         self.__check_reader(_cfg)
         self.__check_recognizer(_cfg)
         self.__check_filter(_cfg)
+        self.__check_log_level(_cfg)
 
     def __check_file(self, cfg: Dict[str, str | None]) -> None:
         _file_base = cfg.get("FILE_BASE")
@@ -85,6 +87,11 @@ class __Config:
         _filter_long_interval = cfg.get("FILTER_LONG_INTERVAL")
         if _filter_long_interval is not None:
             self.filter_long_interval = int(_filter_long_interval)
+
+    def __check_log_level(self, cfg: Dict[str, str | None]) -> None:
+        _log_level = cfg.get("LOG_LEVEL")
+        if _log_level is not None:
+            self.log_level = _log_level
 
 
 CONFIG = __Config()
