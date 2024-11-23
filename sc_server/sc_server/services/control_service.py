@@ -24,11 +24,11 @@ def client_status():
     return _proc.is_alive()
 
 
-def stop_client():
+def stop_client(timeout: float | None = None):
     if not _proc.is_alive():
         return False
     _proc.terminate()
-    _proc.join()
+    _proc.join(timeout)
     return True
 
 

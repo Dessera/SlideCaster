@@ -1,15 +1,19 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from .routers import include_app_routers
+from .services import control_service
 from .error import include_app_error_handlers
 
 
-def create_app() -> FastAPI:
-    """创建FastAPI实例，挂载路由、中间件、错误处理等
+@asynccontextmanager
+async def app_lifespan(app: FastAPI):
+    yield
+    # cleanup sub-processes
+    control_service.stop_client()
 
-    Returns:
-        FastAPI: FastAPI实例
-    """
-    app = FastAPI(title="SC Server")
+
+def create_app() -> FastAPI:
+    app = FastAPI(title="SC Server", lifespan=app_lifespan)
 
     include_app_routers(app)
     include_app_error_handlers(app)

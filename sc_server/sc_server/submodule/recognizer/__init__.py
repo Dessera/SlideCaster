@@ -13,7 +13,10 @@ from ...config import CONFIG
 
 
 def entry(queue: Queue):
+    logging.basicConfig(level=CONFIG.log_level)
     logger = logging.getLogger("gesture_recognizer")
+
+    logger.info("gesture recognizer initializing")
 
     # early initialization (disallow any exceptions)
     try:
@@ -40,6 +43,8 @@ def entry(queue: Queue):
     # register signal handlers (for parent process to stop gracefully)
     signal.signal(signal.SIGINT, exit_handler)
     signal.signal(signal.SIGTERM, exit_handler)
+
+    logger.info("gesture recognizer started")
 
     # main loop (suppress exceptions but log them)
     while True:

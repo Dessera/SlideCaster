@@ -9,7 +9,7 @@ from cv2.typing import MatLike
 from ...utils.fps_controller import fps_controller
 
 
-def __read_process_handler(camera_id: int, fps: float, queue: mp.Queue):
+def _read_process_handler(camera_id: int, fps: float, queue: mp.Queue):
     camera = VideoCapture(camera_id)
 
     # handle sigterm
@@ -22,7 +22,6 @@ def __read_process_handler(camera_id: int, fps: float, queue: mp.Queue):
 
     # Ensure no exception is raised when camera is not opened
     # just for robustness :)
-    # TODO: add logging
     while True:
         with fps_controller(fps):
             ret, frame = camera.read()
@@ -57,7 +56,7 @@ class MultiProcessCameraReader:
 
     def start(self):
         self.m_process = mp.Process(
-            target=__read_process_handler,
+            target=_read_process_handler,
             args=(self.m_camera_id, self.m_fps, self.m_queue),
         )
         self.m_process.start()

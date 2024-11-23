@@ -22,22 +22,9 @@ class GestureRecognizer:
         return Image(image_format=ImageFormat.SRGB, data=cv_image_conv)  # type: ignore
 
     def __recognize_impl(self, image: Image) -> GestureRecognizerResult:  # type: ignore
-        """识别手势的实现函数
-
-        Args:
-            image (Image): 输入图像，类型来自mediapipe
-
-        Returns:
-            GestureRecognizerResult: 识别结果
-        """
         return self.m_recognizer.recognize(image)  # type: ignore
 
     def switch_model(self, model_path: str):
-        """切换模型（加载新的模型）
-
-        Args:
-            model_path (str): 模型路径
-        """
         base_options = ModelBaseOptions(model_asset_path=model_path)
         options = GestureRecognizerOptions(base_options=base_options)
         self.m_recognizer = GestureRecognizerImpl.create_from_options(options)

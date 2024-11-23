@@ -48,8 +48,6 @@ class GestureFilter:
                     self.m_current.s_trig = False
                 else:
                     self.m_current.g_state = "idle"
-                # self.__current.gesture_state = "long"
-                # self.__current.short_gesture_triggered = False
             # 如果手势计数器超过短阈值 -> 短按触发
             elif self.m_current.cnt >= self.m_sthres:
                 # 短按触发，防止重复触发

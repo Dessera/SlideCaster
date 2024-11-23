@@ -4,23 +4,30 @@ from dotenv import dotenv_values
 
 
 class __Config:
+    # File configurations
     file_base: str = "/tmp/.sc_cache"
+    # TODO: a default model and map file should be provided
     model_path: str = "/tmp/.sc_cache/model.task"
     map_path: str = "/tmp/.sc_cache/map.json"
 
+    # Command (IPC) configurations
     command_queue_size: int = 10
     command_queue_timeout: int = 5
 
+    # Camera configurations
     reader_scanning_fps: float = 30.0
     reader_camera_id: int = 0
 
+    # Recognizer configurations
     recognizer_scanning_fps: float = 10.0
 
+    # Filter configurations
     filter_debounce_threshold: int = 2
     filter_short_threshold: int = 4
     filter_long_threshold: int = 8
     filter_long_interval: int = 10
 
+    # Log configurations
     log_level: str = "INFO"
 
     def __init__(self):
