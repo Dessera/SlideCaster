@@ -1,0 +1,18 @@
+{
+  "Thumb_Up": {
+    "short": "page:prev",
+    "long": "page:prev"
+  },
+  "Thumb_Down": {
+    "short": "page:next",
+    "long": "page:next"
+  },
+  "Open_Palm": {
+    "short": "scale:up",
+    "long": "scale:up"
+  },
+  "Closed_Fist": {
+    "short": "scale:down",
+    "long": "scale:down"
+  }
+}
