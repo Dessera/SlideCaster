@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/vue-query";
+import { useWebSocket } from "@vueuse/core";
 
-import { useGetApiURL } from ".";
+import { useGetApiURL, useGetWebsocketURL } from ".";
 
 export function useClientStatus(enabled: boolean | Ref<boolean> = true) {
   const getApiURL = useGetApiURL(["control"]);
@@ -69,5 +70,25 @@ export function useUploadMap() {
     // onSuccess: () => {
     //   queryClient.invalidateQueries({ queryKey: ["control"] });
     // },
+  });
+}
+
+export function useControlWebsocket(
+  onMessage?: (ws: WebSocket, ev: MessageEvent) => void,
+  onError?: (ws: WebSocket, ev: Event) => void,
+  onConnected?: (ws: WebSocket) => void,
+  onDisconnected?: (ws: WebSocket) => void
+) {
+  const getWsURL = useGetWebsocketURL(["control"]);
+  const wsUrl = computed(() => getWsURL("ws"));
+
+  return useWebSocket(wsUrl, {
+    autoReconnect: {
+      delay: 3000,
+    },
+    onMessage,
+    onError,
+    onConnected,
+    onDisconnected,
   });
 }

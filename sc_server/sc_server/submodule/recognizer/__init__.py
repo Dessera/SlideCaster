@@ -57,6 +57,6 @@ def entry(queue: Queue):
                 cmd = mapper.map(gesture, state)
                 if cmd is not None:
                     logger.info(f"gesture: {gesture}, state: {state}, cmd: {cmd}")
-                    queue.put(gesture)
+                    queue.put(cmd)
         except Exception as e:
             logger.error(f"recognizer error: {e}")

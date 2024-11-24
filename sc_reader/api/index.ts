@@ -1,16 +1,25 @@
 import pathLib from "path-browserify-esm";
 
 export function useApiBaseURL() {
-  const base = useRuntimeConfig().public.apiBaseURL;
-  return new URL(base);
+  return useRuntimeConfig().public.apiBaseURL;
 }
 
 export function useGetApiURL(scope: string[] = []) {
   const base = useApiBaseURL();
   return (path: string = "") => {
-    const oldPath = base.pathname;
+    const baseUrl = new URL(base);
+    const oldPath = baseUrl.pathname;
     const newPath = pathLib.join(oldPath, ...scope, path);
     return new URL(newPath, base).toString();
+  };
+}
+
+export function useGetWebsocketURL(scope: string[] = []) {
+  const getApiURL = useGetApiURL(scope);
+
+  return (path: string = "") => {
+    const url = getApiURL(path);
+    return url.replace("http", "ws");
   };
 }
 

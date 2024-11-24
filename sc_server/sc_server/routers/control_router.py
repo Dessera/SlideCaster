@@ -10,7 +10,7 @@ async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
 
     while True:
-        cmd = control_service.get_command()
+        cmd = await control_service.get_command()
         await websocket.send_text(cmd)
 
 

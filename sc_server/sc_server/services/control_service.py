@@ -1,14 +1,18 @@
 import multiprocessing as mp
 
+from ..utils.async_proc_queue import AsyncProcessQueue
+
 from ..config import CONFIG
 from ..submodule.recognizer import entry as recognizer_entry
 
-_queue = mp.Queue(maxsize=CONFIG.command_queue_size)
+# _queue = mp.Queue(maxsize=CONFIG.command_queue_size)
+_queue = AsyncProcessQueue(maxsize=CONFIG.command_queue_size)
 _proc = mp.Process(target=recognizer_entry, args=(_queue,))
 
 
-def get_command():
-    return _queue.get()
+async def get_command():
+    # return _queue.get()
+    return await _queue.coro_get()
 
 
 def start_client():
