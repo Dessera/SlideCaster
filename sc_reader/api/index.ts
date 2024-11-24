@@ -17,7 +17,7 @@ export function useGetApiURL(scope: string[] = []) {
 export function getErrResponse(err: any) {
   // FastAPI error response
   if (err.response && err.response.data && err.response.data.detail) {
-    return err.response.data.detail;
+    return err.response.data.detail as string;
   }
   return "未知错误";
 }
