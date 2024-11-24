@@ -31,7 +31,7 @@ class __Config:
     log_level: str = "INFO"
 
     # app configurations
-    app_base_url: str = "http://localhost:3000"
+    app_base_url: str = "http://localhost:8000"
 
     def __init__(self):
         _cfg: dict[str, str | None] = {**dotenv_values(".env"), **os.environ}

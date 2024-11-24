@@ -1,10 +1,17 @@
-export function useAppBaseURL() {
-  return useRuntimeConfig().public.appBaseURL;
+import pathLib from "path-browserify-esm";
+
+export function useApiBaseURL() {
+  const base = useRuntimeConfig().public.apiBaseURL;
+  return new URL(base);
 }
 
-export function useApiURL(path: string) {
-  const url = new URL(path, useAppBaseURL());
-  return url.toString();
+export function useGetApiURL(scope: string[] = []) {
+  const base = useApiBaseURL();
+  return (path: string = "") => {
+    const oldPath = base.pathname;
+    const newPath = pathLib.join(oldPath, ...scope, path);
+    return new URL(newPath, base).toString();
+  };
 }
 
 export function getErrResponse(err: any) {

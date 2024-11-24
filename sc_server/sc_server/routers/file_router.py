@@ -6,7 +6,7 @@ from ..services import file_service
 router = APIRouter(tags=["file"], prefix="/file")
 
 
-@router.get("/")
+@router.get("")
 async def get_files():
     return file_service.get_files()
 
@@ -19,7 +19,7 @@ async def get_file(file_name: str):
     return FileResponse(file_path)
 
 
-@router.post("/")
+@router.post("")
 async def upload_file(file: UploadFile):
     content = await file.read()
     return file_service.save_file(content, file.filename)

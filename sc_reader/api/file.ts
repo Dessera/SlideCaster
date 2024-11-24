@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/vue-query";
 
-import { useApiURL } from ".";
+import { useGetApiURL } from ".";
 
 export function useFileList() {
-  const apiURL = useApiURL("/file");
+  const getApiURL = useGetApiURL(["file"]);
   return useQuery({
     queryKey: ["file"],
     queryFn: async () => {
-      const { data } = await axios.get(apiURL);
+      const { data } = await axios.get(getApiURL());
       return data as string[];
     },
   });
@@ -31,13 +31,13 @@ export function useDeleteFile() {
 }
 
 export function useUploadFile() {
-  const apiURL = useApiURL("/file");
+  const getApiURL = useGetApiURL(["file"]);
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (file: File) => {
       const formData = new FormData();
       formData.append("file", file);
-      await axios.post(apiURL, formData);
+      await axios.post(getApiURL(), formData);
     },
     onSuccess: () => {
       // Invalidate the file list query
@@ -47,6 +47,6 @@ export function useUploadFile() {
 }
 
 export function useGetFileURL() {
-  const apiURL = useApiURL("/file");
-  return (filename: string) => `${apiURL}/${encodeURIComponent(filename)}`;
+  const getApiURL = useGetApiURL(["file"]);
+  return (filename: string) => getApiURL(encodeURIComponent(filename));
 }

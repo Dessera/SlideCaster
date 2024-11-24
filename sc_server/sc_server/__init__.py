@@ -1,11 +1,21 @@
 from contextlib import asynccontextmanager
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from .routers import include_app_routers
 from .services import control_service
 from .error import include_app_error_handlers
 from .config import CONFIG
+
+
+def get_package_root():
+    return os.path.dirname(__file__)
+
+
+def get_static_path():
+    return os.path.join(get_package_root(), "submodule/reader")
 
 
 @asynccontextmanager
@@ -28,6 +38,8 @@ def create_app() -> FastAPI:
 
     include_app_routers(app)
     include_app_error_handlers(app)
+
+    app.mount("/", StaticFiles(directory=get_static_path(), html=True), name="reader")
 
     return app
 
