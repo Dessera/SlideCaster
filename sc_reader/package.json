@@ -11,12 +11,17 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@tanstack/vue-query": "^5.61.3",
     "@tato30/vue-pdf": "^1.11.1",
     "@vueuse/core": "^11.0.3",
+    "ant-design-vue": "^4.2.6",
+    "axios": "^1.7.7",
     "nuxt": "^3.13.0",
-    "pdf-vue3": "^1.0.12",
     "vue": "^3.5.3",
-    "vue-pdf": "^4.3.0",
     "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.2"
   }
 }

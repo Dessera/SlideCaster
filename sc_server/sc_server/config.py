@@ -30,6 +30,9 @@ class __Config:
     # Log configurations
     log_level: str = "INFO"
 
+    # app configurations
+    app_base_url: str = "http://localhost:3000"
+
     def __init__(self):
         _cfg: dict[str, str | None] = {**dotenv_values(".env"), **os.environ}
         self.__check_file(_cfg)
@@ -38,6 +41,7 @@ class __Config:
         self.__check_recognizer(_cfg)
         self.__check_filter(_cfg)
         self.__check_log_level(_cfg)
+        self.__check_app_base_url(_cfg)
 
     def __check_file(self, cfg: Dict[str, str | None]) -> None:
         _file_base = cfg.get("FILE_BASE")
@@ -99,6 +103,11 @@ class __Config:
         _log_level = cfg.get("LOG_LEVEL")
         if _log_level is not None:
             self.log_level = _log_level
+
+    def __check_app_base_url(self, cfg: Dict[str, str | None]) -> None:
+        _app_base_url = cfg.get("APP_BASE_URL")
+        if _app_base_url is not None:
+            self.app_base_url = _app_base_url
 
 
 CONFIG = __Config()
