@@ -22,12 +22,6 @@ class AsyncProcQueue:
             self.m_executor, self.m_queue.get
         )
 
-    def start_queue(self):
-        self.m_executor = ThreadPoolExecutor()
-
-    def stop_queue(self):
-        self.m_executor.shutdown(wait=False, cancel_futures=True)
-
     @property
     def qsize(self):
         return self.m_queue.qsize

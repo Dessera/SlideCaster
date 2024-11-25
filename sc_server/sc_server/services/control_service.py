@@ -14,8 +14,8 @@ class ControlService:
     m_queue = AsyncProcQueue(maxsize=CONFIG.command_queue_size)
     manager = ConnectionManager()
 
-    m_proc: mp.Process = mp.Process(target=recognizer_entry, args=(m_queue,))
-    m_task = None
+    m_proc: mp.Process | None = None
+    m_task: asyncio.Task | None = None
 
     async def get_command(self):
         return await self.m_queue.coro_get()
@@ -33,21 +33,21 @@ class ControlService:
             self.m_task.cancel()
 
     def start_client(self):
-        if self.m_proc.is_alive():
+        if self.m_proc is not None and self.m_proc.is_alive():
             return False
         self.m_proc = mp.Process(target=recognizer_entry, args=(self.m_queue,))
         self.m_proc.start()
         return True
 
     def client_status(self):
-        return self.m_proc.is_alive()
+        return self.m_proc.is_alive() if self.m_proc is not None else False
 
     def stop_client(self, timeout: float | None = None):
-        if not self.m_proc.is_alive():
-            return False
-        self.m_proc.terminate()
-        self.m_proc.join(timeout)
-        return True
+        if self.m_proc is not None and self.m_proc.is_alive():
+            self.m_proc.terminate()
+            self.m_proc.join(timeout)
+            return True
+        return False
 
     def upload_model(self, file: bytes):
         with open(CONFIG.model_path, "wb") as f:
@@ -58,11 +58,9 @@ class ControlService:
             f.write(file)
 
     def start(self):
-        self.m_queue.start_queue()
         self.start_background_task()
         self.start_client()
 
     def stop(self):
-        self.stop_client()
+        self.stop_client(CONFIG.subprocess_timeout)
         self.stop_background_task()
-        self.m_queue.stop_queue()

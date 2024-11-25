@@ -5,6 +5,7 @@ import {
   FloatButtonGroup,
   FloatButton,
   Spin,
+  App,
 } from "ant-design-vue";
 import {
   UpOutlined,
@@ -17,6 +18,8 @@ import {
 import { useFileList, useGetFileURL } from "~/api/file";
 import { useControlWebsocket } from "~/api/control";
 import { usePDF, VuePDF } from "@tato30/vue-pdf";
+
+const { message } = App.useApp();
 
 const getFileURL = useGetFileURL();
 
@@ -91,7 +94,12 @@ const handleWsMessage = (ws: WebSocket, ev: MessageEvent) => {
   }
 };
 
-const {} = useControlWebsocket(handleWsMessage);
+const cws = useControlWebsocket(
+  handleWsMessage,
+  (ws, ev) => message.error("WebSocket 连接失败，请检查日志"),
+  (ws) => message.info("WebSocket 连接成功"),
+  (ws) => message.info("WebSocket 连接已关闭")
+);
 </script>
 
 <template>

@@ -23,7 +23,7 @@ class __Config:
     # Filter configurations
     filter_debounce_threshold: int = 2
     filter_short_threshold: int = 4
-    filter_long_threshold: int = 8
+    filter_long_threshold: int = 10
     filter_long_interval: int = 10
 
     # Log configurations

@@ -1,7 +1,6 @@
 import logging
 import signal
 import sys
-# import multiprocessing as mp
 
 from .camera_reader import MultiProcessCameraReader
 from .gesture_recognizer import GestureRecognizer
@@ -9,10 +8,11 @@ from .gesture_filter import GestureFilter
 from .gesture_mapper import GestureMapper
 
 from ...utils.fps_controller import fps_controller
+from ...utils.async_proc_queue import AsyncProcQueue
 from ...config import CONFIG
 
 
-def entry(queue=None):
+def entry(queue: AsyncProcQueue | None = None):
     logging.basicConfig(level=CONFIG.log_level)
     logger = logging.getLogger("gesture_recognizer")
 
