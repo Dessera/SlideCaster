@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from .routers import include_app_routers
-from .services import control_service
+from .services.control_service import ControlService
 from .error import include_app_error_handlers
 from .config import CONFIG
 
@@ -20,9 +20,10 @@ def get_static_path():
 
 @asynccontextmanager
 async def app_lifespan(app: FastAPI):
+    ControlService().start()
     yield
     # cleanup sub-processes
-    control_service.stop_client()
+    ControlService().stop()
 
 
 def create_app() -> FastAPI:

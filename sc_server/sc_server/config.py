@@ -6,7 +6,6 @@ from dotenv import dotenv_values
 class __Config:
     # File configurations
     file_base: str = "/tmp/.sc_cache"
-    # TODO: a default model and map file should be provided
     model_path: str = "/tmp/.sc_cache/model.task"
     map_path: str = "/tmp/.sc_cache/map.json"
 
@@ -33,6 +32,9 @@ class __Config:
     # app configurations
     app_base_url: str = "http://localhost:8000"
 
+    # subprocess configurations
+    subprocess_timeout: int = 1
+
     def __init__(self):
         _cfg: dict[str, str | None] = {**dotenv_values(".env"), **os.environ}
         self.__check_file(_cfg)
@@ -42,6 +44,7 @@ class __Config:
         self.__check_filter(_cfg)
         self.__check_log_level(_cfg)
         self.__check_app_base_url(_cfg)
+        self.__check_subprocess_timeout(_cfg)
 
     def __check_file(self, cfg: Dict[str, str | None]) -> None:
         _file_base = cfg.get("FILE_BASE")
@@ -108,6 +111,11 @@ class __Config:
         _app_base_url = cfg.get("APP_BASE_URL")
         if _app_base_url is not None:
             self.app_base_url = _app_base_url
+
+    def __check_subprocess_timeout(self, cfg: Dict[str, str | None]) -> None:
+        _subprocess_timeout = cfg.get("SUBPROCESS_TIMEOUT")
+        if _subprocess_timeout is not None:
+            self.subprocess_timeout = int(_subprocess_timeout)
 
 
 CONFIG = __Config()

@@ -12,9 +12,11 @@ uvicorn = { extras = ["standard"], version = "^0.32.0" }
 python-dotenv = "^1.0.1"
 typer = "^0.13.0"
 mediapipe = "^0.10.18"
+websockets = "^14.1"
 
 [tool.poetry.scripts]
 sc-server = "sc_server.cli:app"
+sc-recognizer = "sc_server.submodule.recognizer:entry"
 
 [build-system]
 requires = ["poetry-core"]

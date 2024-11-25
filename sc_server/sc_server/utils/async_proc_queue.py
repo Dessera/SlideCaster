@@ -2,64 +2,56 @@ import asyncio
 import multiprocessing as mp
 
 from concurrent.futures import ThreadPoolExecutor
-from multiprocessing import Manager, cpu_count
 
 
-def AsyncProcessQueue(maxsize=0):
-    # m = Manager()
-    q = mp.Queue(maxsize=maxsize)
-    return _ProcQueue(q)
+class AsyncProcQueue:
+    m_executor = ThreadPoolExecutor()
 
+    m_queue: mp.Queue
 
-class _ProcQueue(object):
-    _queue: mp.Queue
-
-    def __init__(self, q: mp.Queue):
-        self._queue = q
-        self._real_executor = None
-        self._cancelled_join = False
-
-    @property
-    def _executor(self):
-        if not self._real_executor:
-            self._real_executor = ThreadPoolExecutor(max_workers=cpu_count())
-        return self._real_executor
-
-    def __getstate__(self):
-        self_dict = self.__dict__
-        self_dict["_real_executor"] = None
-        return self_dict
-
-    def __getattr__(self, name):
-        if name in [
-            "qsize",
-            "empty",
-            "full",
-            "put",
-            "put_nowait",
-            "get",
-            "get_nowait",
-            "close",
-        ]:
-            return getattr(self._queue, name)
-        else:
-            raise AttributeError(
-                "'%s' object has no attribute '%s'" % (self.__class__.__name__, name)
-            )
+    def __init__(self, maxsize: int = 0):
+        self.m_queue = mp.Queue(maxsize=maxsize)
 
     async def coro_put(self, item):
-        loop = asyncio.get_event_loop()
-        return await loop.run_in_executor(self._executor, self.put, item)
+        return await asyncio.get_event_loop().run_in_executor(
+            self.m_executor, self.m_queue.put, item
+        )
 
     async def coro_get(self):
-        loop = asyncio.get_event_loop()
-        return await loop.run_in_executor(self._executor, self.get)
+        return await asyncio.get_event_loop().run_in_executor(
+            self.m_executor, self.m_queue.get
+        )
 
-    def cancel_join_thread(self):
-        self._cancelled_join = True
-        self._queue.cancel_join_thread()
+    def start_queue(self):
+        self.m_executor = ThreadPoolExecutor()
 
-    def join_thread(self):
-        self._queue.join_thread()
-        if self._real_executor and not self._cancelled_join:
-            self._real_executor.shutdown()
+    def stop_queue(self):
+        self.m_executor.shutdown(wait=False, cancel_futures=True)
+
+    @property
+    def qsize(self):
+        return self.m_queue.qsize
+
+    @property
+    def empty(self):
+        return self.m_queue.empty
+
+    @property
+    def full(self):
+        return self.m_queue.full
+
+    @property
+    def put(self):
+        return self.m_queue.put
+
+    @property
+    def put_nowait(self):
+        return self.m_queue.put_nowait
+
+    @property
+    def get(self):
+        return self.m_queue.get
+
+    @property
+    def get_nowait(self):
+        return self.m_queue.get_nowait
