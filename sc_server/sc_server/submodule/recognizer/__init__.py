@@ -1,18 +1,18 @@
 import logging
 import signal
 import sys
-from multiprocessing import Queue
 
 from .camera_reader import MultiProcessCameraReader
 from .gesture_recognizer import GestureRecognizer
 from .gesture_filter import GestureFilter
 from .gesture_mapper import GestureMapper
-from ...utils.fps_controller import fps_controller
 
+from ...utils.fps_controller import fps_controller
+from ...utils.async_proc_queue import AsyncProcQueue
 from ...config import CONFIG
 
 
-def entry(queue: Queue):
+def entry(queue: AsyncProcQueue | None = None):
     logging.basicConfig(level=CONFIG.log_level)
     logger = logging.getLogger("gesture_recognizer")
 
@@ -37,7 +37,8 @@ def entry(queue: Queue):
         sys.exit(1)
 
     def exit_handler(sig, frame):
-        reader.stop()
+        reader.stop(CONFIG.subprocess_timeout)
+        logger.info("gesture recognizer stopped")
         sys.exit(0)
 
     # register signal handlers (for parent process to stop gracefully)
@@ -55,8 +56,10 @@ def entry(queue: Queue):
 
                 state, gesture = filter.filter(gst)
                 cmd = mapper.map(gesture, state)
+
                 if cmd is not None:
                     logger.info(f"gesture: {gesture}, state: {state}, cmd: {cmd}")
-                    queue.put(gesture)
+                    if queue is not None:
+                        queue.put(cmd)
         except Exception as e:
             logger.error(f"recognizer error: {e}")

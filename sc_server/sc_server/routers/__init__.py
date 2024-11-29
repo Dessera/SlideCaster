@@ -8,5 +8,5 @@ def include_app_routers(app: FastAPI):
     Args:
         app (FastAPI): FastAPI实例
     """
-    app.include_router(control_router.router)
-    app.include_router(file_router.router)
+    app.include_router(control_router.router, prefix="/api")
+    app.include_router(file_router.router, prefix="/api")

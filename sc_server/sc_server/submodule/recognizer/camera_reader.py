@@ -61,8 +61,8 @@ class MultiProcessCameraReader:
         )
         self.m_process.start()
 
-    def stop(self):
+    def stop(self, timeout: float | None = None):
         if self.m_process is not None:
             self.m_process.terminate()
-            self.m_process.join()
+            self.m_process.join(timeout)
             self.m_process = None

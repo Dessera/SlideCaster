@@ -1,18 +1,30 @@
 {
-  "Thumb_Up": {
+  "prev_page": {
     "short": "page:prev",
     "long": "page:prev"
   },
-  "Thumb_Down": {
+  "next_page": {
     "short": "page:next",
     "long": "page:next"
   },
-  "Open_Palm": {
+  "zoom_in": {
     "short": "scale:up",
     "long": "scale:up"
   },
-  "Closed_Fist": {
+  "zoom_out": {
     "short": "scale:down",
     "long": "scale:down"
+  },
+  "prev_doc": {
+    "short": "file:prev",
+    "long": "file:prev"
+  },
+  "next_doc": {
+    "short": "file:next",
+    "long": "file:next"
+  },
+  "reset_settings": {
+    "short": "settings:reset",
+    "long": "settings:reset"
   }
 }
