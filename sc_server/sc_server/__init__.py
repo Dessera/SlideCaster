@@ -40,7 +40,7 @@ def create_app() -> FastAPI:
     include_app_routers(app)
     include_app_error_handlers(app)
 
-    # app.mount("/", StaticFiles(directory=get_static_path(), html=True), name="reader")
+    app.mount("/", StaticFiles(directory=get_static_path(), html=True), name="reader")
 
     return app
 
