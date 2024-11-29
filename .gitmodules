@@ -1,0 +1,6 @@
+[submodule "sc_train/dataset_generator"]
+	path = sc_train/dataset_generator
+	url = https://github.com/Charliechen114514/AutoHandDatasetGenerator
+[submodule "sc_train/training_utils"]
+	path = sc_train/training_utils
+	url = https://github.com/Charliechen114514/EasyMediapipeTraining

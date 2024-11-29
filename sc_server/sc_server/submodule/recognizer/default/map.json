@@ -1,0 +1,30 @@
+{
+  "prev_page": {
+    "short": "page:prev",
+    "long": "page:prev"
+  },
+  "next_page": {
+    "short": "page:next",
+    "long": "page:next"
+  },
+  "zoom_in": {
+    "short": "scale:up",
+    "long": "scale:up"
+  },
+  "zoom_out": {
+    "short": "scale:down",
+    "long": "scale:down"
+  },
+  "prev_doc": {
+    "short": "file:prev",
+    "long": "file:prev"
+  },
+  "next_doc": {
+    "short": "file:next",
+    "long": "file:next"
+  },
+  "reset_settings": {
+    "short": "settings:reset",
+    "long": "settings:reset"
+  }
+}
