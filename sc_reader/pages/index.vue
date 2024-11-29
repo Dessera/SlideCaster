@@ -76,9 +76,13 @@ const handlePrevFile = () => {
   }
 };
 
+const handleReset = () => {
+  currentPage.value = 1;
+  currentScale.value = 1;
+};
+
 const handleWsMessage = (ws: WebSocket, ev: MessageEvent) => {
   const cmd = ev.data as string;
-  console.log("Received command:", cmd);
   if (cmd === "page:next") {
     handleNextPage();
   } else if (cmd === "page:prev") {
@@ -91,6 +95,10 @@ const handleWsMessage = (ws: WebSocket, ev: MessageEvent) => {
     handleNextFile();
   } else if (cmd === "file:prev") {
     handlePrevFile();
+  } else if (cmd === "settings:reset") {
+    handleReset();
+  } else {
+    console.warn("Unknown command:", cmd);
   }
 };
 
